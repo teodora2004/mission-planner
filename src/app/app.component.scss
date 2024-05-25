@@ -1,0 +1,12 @@
+.main-wrapper {
+  .bar {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+  }
+
+  .content {
+    margin: 5em;
+  }
+}
