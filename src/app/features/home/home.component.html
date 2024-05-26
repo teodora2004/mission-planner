@@ -125,16 +125,57 @@ export const environment = &#123;
     <p>In your services, you can use the <code>apiUrl</code> from the environment file to make HTTP requests to the JSON
       server.</p>
   </section>
+
+  <section>
+    <h2>Canvas Bounds Configuration</h2>
+    <p>The canvas bounds are configurable to prevent creating a point outside the canvas and to size the canvas appropriately.</p>
+    <p>These bounds are used to constrain point creation within the canvas area and ensure that the canvas is sized correctly to accommodate the points.</p>
+    <p>By configuring these bounds in the environment file, you can easily adjust the canvas size and constraints as needed for your application.</p>
+    <pre><code>// src/environments/environment.ts
+canvasBounds: &#123;
+  width: 900,
+  height: 600,
+&#125;;</code></pre>
+  </section>
+
+  <section>
+    <h2>Usage</h2>
+    <h3>Navigate to the Home Page</h3>
+    <p>Mission planner brief</p>
+
+    <section>
+      <h3>Use the Planner Feature</h3>
+      <p>To use the Planner feature, follow these steps:</p>
+      <ol>
+        <li>Open the Planner feature from the navigation menu.</li>
+        <li>In the Planner interface, you'll find a form to create new coordinates. The form includes three inputs:</li>
+        <ul>
+          <li><strong>Name:</strong> Enter a name for the coordinate.</li>
+          <li><strong>X:</strong> Enter the X-coordinate value. This value should be a number and constrained to be less than the canvas width defined in the environment file.</li>
+          <li><strong>Y:</strong> Enter the Y-coordinate value. This value should be a number and constrained to be less than the canvas height defined in the environment file.</li>
+        </ul>
+        <li>Fill out the form with the required information and click the "Add Point" button to create a new coordinate.</li>
+        <li>Once you've added coordinates, you'll see a list below the form displaying all the coordinates you've created. This list provides details such as the name, X-coordinate, and Y-coordinate for each point.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h3>Use the Player Feature</h3>
+      <p>The Player feature allows you to visualize the route created in the Planner feature and animate the movement of a robot along the route. Follow these steps to use the Player feature:</p>
+      <ol>
+        <li>Open the Player feature from the navigation menu.</li>
+        <li>In the Player interface, you'll find a legend displaying all the points previously created using the Planner feature. The legend provides details such as the name, X-coordinate, and Y-coordinate for each point.</li>
+        <li>Beneath the legend, you'll see a map displaying the coordinates and the route between them. The route indicates the path the robot will follow.</li>
+        <li>There are two buttons available:</li>
+        <ul>
+          <li><strong>Play:</strong> Click this button to start the animation of the robot along the route.</li>
+          <li><strong>Stop:</strong> Click this button to stop the animation of the robot.</li>
+        </ul>
+        <li>By clicking the "Play" button, the robot will animate along the route, following the path from one point to another.</li>
+        <li>You can use the "Stop" button to halt the animation at any point.</li>
+      </ol>
+    </section>
+  </section>
 </div>
 
-<section>
-  <h2>Usage</h2>
-  <h3>Navigate to the Home Page</h3>
-  <p>Description of what the user can do on the home page.</p>
 
-  <h3>Use the Planner Feature</h3>
-  <p>Step-by-step instructions on how to use the planner feature.</p>
-
-  <h3>Use the Player Feature</h3>
-  <p>Step-by-step instructions on how to use the player feature.</p>
-</section>

@@ -1,0 +1,7 @@
+<section class="player-container">
+  <h1>Mission</h1>
+  <div *ngIf="points$ | async as points" class="wrapper">
+    <app-legend-player [points]="points"></app-legend-player>
+    <app-mission-player [points]="points"></app-mission-player>
+  </div>
+</section>

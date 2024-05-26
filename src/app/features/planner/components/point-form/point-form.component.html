@@ -3,17 +3,17 @@
     <mat-form-field appearance="outline" class="form-field">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" placeholder="Enter point name">
-      <mat-error *ngIf="pointForm.get('name')?.invalid">Name is required</mat-error>
+      <mat-error *ngIf="pointForm.get('name')?.invalid">{{ getErrorMessage('name') }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-field">
       <mat-label>X Coordinate</mat-label>
       <input matInput formControlName="x" placeholder="Enter X coordinate">
-      <mat-error *ngIf="pointForm.get('x')?.invalid">X coordinate is required and must be a number</mat-error>
+      <mat-error *ngIf="pointForm.get('x')?.invalid">{{ getErrorMessage('x') }}</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-field">
       <mat-label>Y Coordinate</mat-label>
       <input matInput formControlName="y" placeholder="Enter Y coordinate">
-      <mat-error *ngIf="pointForm.get('y')?.invalid">Y coordinate is required and must be a number</mat-error>
+      <mat-error *ngIf="pointForm.get('y')?.invalid">{{ getErrorMessage('y') }}</mat-error>
     </mat-form-field>
   </div>
   <div class="form-actions">

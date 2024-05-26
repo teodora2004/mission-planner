@@ -23,7 +23,6 @@ const customProviders = [PointService];
   providers: customProviders,
   templateUrl: './planner.component.html',
   styleUrls: ['./planner.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlannerComponent implements OnInit {
   public points$: Observable<Point[]> = of([]);
