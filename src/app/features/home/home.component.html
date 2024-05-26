@@ -3,7 +3,10 @@
   <section>
     <h2>Overview</h2>
     <p>
-      This Angular 16 application provides a simplified mission planning capability, empowering operators to create and visualize robot movement. It leverages Angular Material for UI components and follows best practices for modular and maintainable code.
+      This Angular 16 application provides a simplified mission planning capability, empowering operators to create and
+      visualize robot movement. It leverages Angular Material for UI components and follows best practices for modular
+      and maintainable code.
+    </p>
   </section>
 
   <section>
@@ -23,7 +26,8 @@
           <li><strong>player</strong>: Player feature standalone component.</li>
         </ul>
       </li>
-      <li><strong>src/app/shared</strong>: Contains shared components, such as the navigation bar, page-not-found component.
+      <li><strong>src/app/shared</strong>: Contains shared components, such as the navigation bar, page-not-found
+        component.
         <ul>
           <li><strong>components</strong>: Reusable components shared across the application.</li>
         </ul>
@@ -59,7 +63,8 @@ cd mission-planner</code></pre>
       <li>
         <strong>Serve the application:</strong>
         <pre><code>ng serve</code></pre>
-        <p>The application will be served at <a href="http://localhost:4200/" target="_blank">http://localhost:4200/</a>. Open this URL in your web browser to view the application.</p>
+        <p>The application will be served at <a href="http://localhost:4200/"
+            target="_blank">http://localhost:4200/</a>. Open this URL in your web browser to view the application.</p>
       </li>
     </ol>
 
@@ -86,14 +91,50 @@ cd mission-planner</code></pre>
   </section>
 
   <section>
-    <h2>Usage</h2>
-    <h3>Navigate to the Home Page</h3>
-    <p>Description of what the user can do on the home page.</p>
+    <h2>JSON Server Integration</h2>
+    <h3>Overview</h3>
+    <p>To store the points, a JSON server is used as a mock backend. This allows for easy testing and development of the
+      application without the need for a real backend.</p>
 
-    <h3>Use the Planner Feature</h3>
-    <p>Step-by-step instructions on how to use the planner feature.</p>
+    <h3>Setup</h3>
+    <ol>
+      <li>
+        <strong>Install JSON Server:</strong>
+        <pre><code>npm install -g json-server</code></pre>
+      </li>
+      <li>
+        <strong>Start JSON Server:</strong>
+        <pre><code>json-server --watch db.json</code></pre>
+        <p>The JSON server will run at <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a>.</p>
+      </li>
+    </ol>
 
-    <h3>Use the Player Feature</h3>
-    <p>Step-by-step instructions on how to use the player feature.</p>
+    <h3>Configuration</h3>
+    <p>The JSON server URL can be configured via the environment file. Update the environment files as follows:</p>
+    <pre><code>// src/environments/environment.ts
+export const environment = &#123;
+  production: false,
+  apiUrl: 'http://localhost:3000'
+&#125;;
+
+// src/environments/environment.prod.ts
+export const environment = &#123;
+  production: true,
+  apiUrl: 'http://localhost:3000'
+&#125;;</code></pre>
+    <p>In your services, you can use the <code>apiUrl</code> from the environment file to make HTTP requests to the JSON
+      server.</p>
   </section>
 </div>
+
+<section>
+  <h2>Usage</h2>
+  <h3>Navigate to the Home Page</h3>
+  <p>Description of what the user can do on the home page.</p>
+
+  <h3>Use the Planner Feature</h3>
+  <p>Step-by-step instructions on how to use the planner feature.</p>
+
+  <h3>Use the Player Feature</h3>
+  <p>Step-by-step instructions on how to use the player feature.</p>
+</section>
