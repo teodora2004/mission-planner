@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Point } from 'src/app/shared/interfaces';
+import { Point } from '@shared/interfaces';
 import { Observable, of } from 'rxjs';
-import { PointService } from '../../services/point.service';
+import { PointService } from '@shared/services/point.service';
 import { PointListComponent } from '../point-list/point-list.component';
 import { PointFormComponent } from '../point-form/point-form.component';
 
@@ -14,13 +14,16 @@ const customImports = [
   PointFormComponent,
 ];
 
+const customProviders = [PointService];
+
 @Component({
   selector: 'app-planner',
   standalone: true,
   imports: customImports,
-  providers: [PointService],
+  providers: customProviders,
   templateUrl: './planner.component.html',
   styleUrls: ['./planner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PlannerComponent implements OnInit {
   public points$: Observable<Point[]> = of([]);
@@ -31,7 +34,7 @@ export class PlannerComponent implements OnInit {
     this.loadPoints();
   }
 
-  private loadPoints(): void{
+  private loadPoints(): void {
     this.points$ = this.pointService.getPoints();
   }
 
