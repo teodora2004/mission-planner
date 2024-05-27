@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { GetPointsResponse, Point } from 'src/app/shared/interfaces';
 import { environment } from 'src/environments/environment';
@@ -12,7 +12,7 @@ export class PointService {
 
   constructor(private http: HttpClient) { }
 
-  public getPoints(page: number, limit: number): Observable<GetPointsResponse> {
+  public getPaginatedPoints(page: number, limit: number): Observable<GetPointsResponse> {
     const params = new HttpParams()
       .set('_page', page.toString())
       .set('_per_page', limit.toString());
@@ -22,6 +22,10 @@ export class PointService {
         return { data: response.data || [], items: response.items };
       })
     );
+  }
+
+  public getPoints(): Observable<Point[]> {
+    return this.http.get<Point[]>(this.apiUrl);
   }
 
   public addPoint(point: Point): Observable<Point> {

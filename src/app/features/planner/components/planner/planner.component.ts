@@ -46,7 +46,7 @@ export class PlannerComponent implements OnInit, OnDestroy {
 
   private loadPoints(): void {
     this.pointService
-      .getPoints(this.pageIndex + 1, this.pageSize)
+      .getPaginatedPoints(this.pageIndex + 1, this.pageSize)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (response) => {
