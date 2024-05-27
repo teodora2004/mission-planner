@@ -1,0 +1,16 @@
+.planner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .list-wrapper, .form-wrapper {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
