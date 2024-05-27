@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'player',
     loadComponent: () =>
-      import('./features/player/player.component').then((m) => m.PlayerComponent),
+      import('./features/player/components/player/player.component').then((m) => m.PlayerComponent),
   },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
