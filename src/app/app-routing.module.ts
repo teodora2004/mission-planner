@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'planner',
     loadComponent: () =>
-      import('./features/planner/planner.component').then((m) => m.PlannerComponent),
+      import('./features/planner/components/planner/planner.component').then((m) => m.PlannerComponent),
   },
   {
     path: 'player',

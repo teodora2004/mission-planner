@@ -1,0 +1,9 @@
+<div class="planner-container">
+  <h1>Mission Planner</h1>
+  <div class="form-wrapper">
+    <app-point-form (pointAdded)="handlePointAdded($event)"></app-point-form>
+  </div>
+  <div class="list-wrapper">
+    <app-point-list [points]="points" [total]="totalPoints" (pageChange)="handlePageChange($event)"></app-point-list>
+  </div>
+</div>
