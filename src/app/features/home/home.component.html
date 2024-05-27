@@ -1,3 +1,103 @@
-<section>
-  <h2>Home</h2>
-</section>
+<div class="home-container">
+  <h1>Welcome to Mission Planner</h1>
+  <section>
+    <h2>Overview</h2>
+    <p>
+      This Angular 16 application provides a simplified mission planning capability, empowering operators to create and
+      visualize robot movement. It leverages Angular Material for UI components and follows best practices for modular
+      and maintainable code.
+  </section>
+
+  <section>
+    <h2>Application Structure</h2>
+    <ul>
+      <li><strong>src/app</strong>: Contains the main application code.
+        <ul>
+          <li><strong>app.component.ts</strong>: The root component of the application.</li>
+          <li><strong>app.module.ts</strong>: The main module that bootstraps the application.</li>
+          <li><strong>app-routing.module.ts</strong>: Defines the routes for the application.</li>
+        </ul>
+      </li>
+      <li><strong>src/app/features</strong>: Contains feature components.
+        <ul>
+          <li><strong>home</strong>: Home feature standalone component.</li>
+          <li><strong>planner</strong>: Planner feature standalone component.</li>
+          <li><strong>player</strong>: Player feature standalone component.</li>
+        </ul>
+      </li>
+      <li><strong>src/app/shared</strong>: Contains shared components, such as the navigation bar, page-not-found
+        component.
+        <ul>
+          <li><strong>components</strong>: Reusable components shared across the application.</li>
+        </ul>
+      </li>
+      <li><strong>src/assets</strong>: Contains static assets such as images.</li>
+      <li><strong>src/environments</strong>: Configuration for different environments (development, production).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Getting Started</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+      <li>Node.js (v14 or later)</li>
+      <li>Angular CLI (v16 or later)</li>
+    </ul>
+
+    <h3>Installation</h3>
+    <ol>
+      <li>
+        <strong>Clone the repository:</strong>
+        <pre><code>git clone https://github.com/teodora2004/mission-planner
+cd mission-planner</code></pre>
+      </li>
+      <li>
+        <strong>Install dependencies:</strong>
+        <pre><code>npm install</code></pre>
+      </li>
+    </ol>
+
+    <h3>Running the Application</h3>
+    <ol>
+      <li>
+        <strong>Serve the application:</strong>
+        <pre><code>ng serve</code></pre>
+        <p>The application will be served at <a href="http://localhost:4200/"
+            target="_blank">http://localhost:4200/</a>. Open this URL in your web browser to view the application.</p>
+      </li>
+    </ol>
+
+    <h3>Building the Application</h3>
+    <ol>
+      <li>
+        <strong>Build for production:</strong>
+        <pre><code>ng build --prod</code></pre>
+        <p>This command will create a <code>dist/</code> directory containing the compiled application.</p>
+      </li>
+    </ol>
+
+    <h3>Additional Commands</h3>
+    <ul>
+      <li>
+        <strong>Lint the code:</strong>
+        <pre><code>ng lint</code></pre>
+      </li>
+      <li>
+        <strong>Run unit tests:</strong>
+        <pre><code>ng test</code></pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Usage</h2>
+    <h3>Navigate to the Home Page</h3>
+    <p>Description of what the user can do on the home page.</p>
+
+    <h3>Use the Planner Feature</h3>
+    <p>Step-by-step instructions on how to use the planner feature.</p>
+
+    <h3>Use the Player Feature</h3>
+    <p>Step-by-step instructions on how to use the player feature.</p>
+  </section>
+</div>
